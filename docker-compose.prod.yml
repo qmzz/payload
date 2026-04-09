@@ -1,0 +1,30 @@
+services:
+  payload:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Shanghai
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - DATABASE_URL=mongodb://mongo_s3YApn:mongo_zRCnrT@1panel-mongodb-3Vju:27017/payload?authSource=admin
+      - SERVER_URL=https://b.cmkk.fun
+      - NEXT_PUBLIC_SERVER_URL=https://b.cmkk.fun
+      - CRON_SECRET=${CRON_SECRET}
+      - PREVIEW_SECRET=${PREVIEW_SECRET}
+      - NEXT_TELEMETRY_DISABLED=1
+    command: sh -c "npm install -g pnpm && pnpm install && pnpm build && pnpm start"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+volumes:
+  node_modules:
+
+networks:
+  1panel-network:
+    external: true

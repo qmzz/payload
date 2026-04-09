@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <style>
+    .bg-light { fill: #1a1a1a; }
+    .bg-dark { fill: #ffffff; }
+    .text-light { fill: #ffffff; }
+    .text-dark { fill: #1a1a1a; }
+    .emoji { font-size: 400px; }
+    .text { font-size: 180px; font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    
+    #light-theme { display: inline; }
+    #dark-theme { display: none; }
+    
+    @media (prefers-color-scheme: dark) {
+      #light-theme { display: none; }
+      #dark-theme { display: inline; }
+    }
+  </style>
+  
+  <!-- 浅色主题 -->
+  <g id="light-theme">
+    <rect width="1000" height="1000" class="bg-light" rx="350"/>
+    <text x="500" y="380" text-anchor="middle" class="emoji">🏛️</text>
+    <text x="500" y="680" text-anchor="middle" class="text text-light">赛博帝国</text>
+  </g>
+  
+  <!-- 深色主题 -->
+  <g id="dark-theme">
+    <rect width="1000" height="1000" class="bg-dark" rx="350"/>
+    <text x="500" y="380" text-anchor="middle" class="emoji">🏛️</text>
+    <text x="500" y="680" text-anchor="middle" class="text text-dark">赛博帝国</text>
+  </g>
+</svg>
