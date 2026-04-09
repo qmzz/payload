@@ -11,7 +11,7 @@ services:
       - NODE_ENV=production
       - TZ=Asia/Shanghai
       - PAYLOAD_SECRET=${PAYLOAD_SECRET}
-      - DATABASE_URL=mongodb://mongo_s3YApn:mongo_zRCnrT@1panel-mongodb-3Vju:27017/payload?authSource=admin
+      - DATABASE_URL=
       - SERVER_URL=https://b.cmkk.fun
       - NEXT_PUBLIC_SERVER_URL=https://b.cmkk.fun
       - CRON_SECRET=${CRON_SECRET}
