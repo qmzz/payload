@@ -3,6 +3,11 @@
 
 FROM node:22.17.0-alpine AS base
 
+ARG PAYLOAD_SECRET=build-time-placeholder-secret
+ARG DATABASE_URL=mongodb://127.0.0.1:27017/payload
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
+ENV DATABASE_URL=$DATABASE_URL
+
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
